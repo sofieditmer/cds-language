@@ -28,8 +28,8 @@ Example: `python3 sentiment_au617836.py -p ../data/abcnews-date-text.csv -o outp
 -o is the output path
 
 ## Summary of results
-### What (if any) are the general trends? <br>
-### 2) What (if any) inferences might you draw from them?
+### 1. What (if any) are the general trends? <br>
+### 2. What (if any) inferences might you draw from them?
 
 ### Plot 1: Sentiment scores with 1-week rolling average
 ![Image of Yaktocat](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment3_SentimentAnalysis/outputs/smoothed_sentiment_week.png)
