@@ -23,6 +23,6 @@ Step-by-step guide:
 `source sentiment_environment/bin/activate`
 
 5. Run the sentiment.py script within the virtual environment and specify the relevant parameters <br>
-Example: `python3 sentiment.py -p data/abcnews-date-text.csv -o plots/` <br>
+Example: `python3 sentiment.py -p data/abcnews-date-text.csv -o outputs/` <br>
 -p is the input path <br>
 -o is the output path
