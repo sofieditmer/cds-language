@@ -11,10 +11,10 @@ The outputs of the script will be saved in the output directory specified when r
 Step-by-step guide:
 
 1. Clone the repository <br>
-`git clone https://github.com/sofieditmer/cds-language.git cds-language-sofie`
+`git clone https://github.com/sofieditmer/cds-language.git cds-language-sd`
 
 2. Navigate to the assignment folder in the newly created repository <br>
-`cd cds-language-sd/Assignment3_SentimentAnalysis`
+`cd cds-language-sd/assignment3_SentimentAnalysis`
 
 3. Create a virtual environment called "sentiment_environment" by running the create_assignment3_venv.sh script <br>
 `bash create_assignment3_venv.sh`
