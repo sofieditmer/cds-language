@@ -31,7 +31,7 @@ source assignment4_venv/bin/activate
 
 Example: <br>
 ```
-python3 network.py -i ../weighted_edgelist.csv -c 500
+python3 network.py -i ../data/weighted_edgelist.csv -c 500
 ```
 
 ### Output <br>
