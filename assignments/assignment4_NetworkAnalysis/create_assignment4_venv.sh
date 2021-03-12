@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VENVNAME=assignment4
+VENVNAME=assignment4_venv
 
 python3 -m venv $VENVNAME
 source $VENVNAME/bin/activate
