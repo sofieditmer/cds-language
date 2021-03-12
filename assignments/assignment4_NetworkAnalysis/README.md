@@ -17,7 +17,7 @@ git clone https://github.com/sofieditmer/cds-language.git cds-language-sd
 cd cds-language-sd/assignments/assignment4_NetworkAnalysis
 ```
 
-3. Create and activate virtual environment, "assignment4_venv", by running the bash script create_assignment4_venv.sh
+3. Create and activate virtual environment, "assignment4_venv", by running the bash script create_assignment4_venv.sh. This will install the required dependencies listed in requirements.txt 
 
 ```
 bash create_assignment4_venv.sh
@@ -27,15 +27,14 @@ source assignment4_venv/bin/activate
 4. Run the network.py script within the assignment4_venv virtual environment. I have provided a weighted edgelist called "weighted_edgelist.csv" in the data folder on which you can run the script. Run the script and specify the parameters:
 
 `-i:` path to the weighted edgelist <br>
-`-c:` edge weight cut-off point to filter the data based on <br>
-`-o:` path to output directory
+`-c:` edgeweight cut-off point to filter the data based on <br>
 
 Example: <br>
 ```
-python3 network.py -i ../weighted_edgelist.csv -c 300 -o output/
+python3 network.py -i ../weighted_edgelist.csv -c 500
 ```
 
 ### Output <br>
-When running the network.py script you will get two outputs: a network visualization called "network.png" which is saved in a folder called "viz" which is created when running the script, and a CSV-file containing centrality measures for each node called "centrality_measures.csv" saved in the specified output directory. If an output directory is not specified, a directory called "output" will be created in which the CSV-file will be saved.
+When running the network.py script you will get two outputs: a network visualization called "network.png" which is saved in a folder called "viz" which is created when running the script, and a CSV-file containing centrality measures for each node called "centrality_measures.csv" saved in an output directory also created when running the script.
 1. network.png | the network visualization.
 2. centrality_measures.csv | centrality measures (degree, betweenness, and eigenvector) for each node.
