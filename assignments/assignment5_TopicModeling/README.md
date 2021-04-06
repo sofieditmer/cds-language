@@ -18,7 +18,7 @@ The LDA model trained on the Donald Trump tweets achieved a perplexity score of 
 All results can be found in the out and viz directories. 
 
 __Overview of topics__
-![alt text](https://worker02.chcaa.au.dk/jupyter/user/cds-au617836/view/cds-language-forked/assignments/assignment5_TopicModeling/out/topics.png)
+![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/out/topics.png)
 
 __Conclusion__
 Some topics are more clear than others. If I had had more time, I would look into that. I would also like to look at how the contents of the tweets change over time, i.e. what Donald Trump is generally concerned with over the years. 
@@ -48,7 +48,7 @@ source ass5_venv/bin/activate
 
 4. Navigate to the src folder
 
-````
+```
 cd src
 ```
 
