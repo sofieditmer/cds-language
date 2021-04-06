@@ -4,27 +4,23 @@
 
 For this assignment, I have chosen to perform topic modeling and train an LDA model on all tweets written by Donald Trump between May 2009 and June 2020. The dataset I used can be found on Kaggle (link to dataset: https://www.kaggle.com/austinreese/trump-tweets). 
 
-__Research statement__
+__Research statement__ <br>
 I chose to work with the tweets of Donald Trump between 2009 and 2020, because I was interested in whether it would be possible to find meaningful and consistent topics within them.
 
-__Results__
+__Results__ <br>
 The LDA model trained on the Donald Trump tweets achieved a perplexity score of -8.43 and a coherence measure of 0.37. The outputs of the script are as follows:
 
-1. A csv-file showing the most dominant topic per chunk. 
-2. A csv-file showing the topics and their assoicated percentage contribution, i.e. how frequently each topic occurs across the corpus. 
-3. A document-topic matrix showing have all chunks for each topic
-4. A lineplot showing the rolling scores calculated with a rolling mean of 50 as default. This lineplot demonstrates how chunks of tweets change in content over time, i.e. which topic is most dominant over time. 
+1. A txt-file containing an overview of the topics as well as the perplexity and coherence scores. 
+2. A csv-file showing the most dominant topic per chunk. 
+3. A csv-file showing the topics and their assoicated percentage contribution, i.e. how frequently each topic occurs across the corpus. 
 
-All results can be found in the out and viz directories. 
+All results can be found in the out folder. 
 
 __Overview of topics__
 ![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/out/topics.png)
 
-__Conclusion__
-Some topics are more clear than others. If I had had more time, I would look into that. I would also like to look at how the contents of the tweets change over time, i.e. what Donald Trump is generally concerned with over the years. 
-
-<br>
-
+__Conclusion__ <br>
+Some topics are more clear than others. If I had had more time, I would look into that. I would also like to look at how the contents of the tweets change over time, i.e. what Donald Trump is generally concerned with over the years. <br>
 
 ### Running the script <br>
 Step-by-step-guide:
