@@ -20,7 +20,7 @@ __Overview of topics__
 ![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/out/topics.png)
 
 __Conclusion__ <br>
-Some topics are more clear than others. If I had had more time, I would look into that. I would also like to look at how the contents of the tweets change over time, i.e. what Donald Trump is generally concerned with over the years. <br>
+Some topics are more clear than others. If I had had more time, I would look into that. I would also like to look at how the contents of the tweets change over time, i.e. how the contents of the tweets change over time. <br>
 
 ### Running the script <br>
 Step-by-step-guide:
