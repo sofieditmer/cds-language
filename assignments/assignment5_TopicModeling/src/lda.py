@@ -105,7 +105,7 @@ def main():
         os.mkdir(os.path.join("..", "out"))
     
     # Start message to user
-    print("\n[INFO] Initializing topic modeling on all Donald Trump tweets as of June 2020...")
+    print("\n[INFO] Initializing topic modeling on all Donald Trump tweets from May 2009 to June 2020...")
     
     # Load and prepare data
     print("\n[INFO] Loading and preprocessing data...")
@@ -152,7 +152,7 @@ def load_data(filename):
 
 def process_data(data, min_count, threshold):
     """
-    Create bigram and trigram models, git models, and perform lemmatization and part-of-speech-tagging
+    Create bigram and trigram models, and perform lemmatization and part-of-speech-tagging
     """
           
     # Create model of bigrams and trigrams 
