@@ -18,7 +18,7 @@ The LDA model trained on the Donald Trump tweets achieved a perplexity score of 
 
 All results can be found in the out and the viz directories. 
 
-__Optimal number of topics__
+__Optimal number of topics__ <br>
 Below you can see that the optimal number of topics proved to be 10 based on the maximum coherence value.
 ![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/viz/n_topics_coherence.jpg) <br>
 
@@ -26,7 +26,7 @@ __Overview of topics__ <br>
 Below is an overview of the 10 topics found by the LDA model. Each topic contains a set of keywords as well as the weight of each individual keyword indicating the importance of that particular keyword for the particular topic.
 ![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/out/overview_topics.png) <br>
 
-__Topics over time__
+__Topics over time__ <br>
 Below is an overview of how the contents of the tweets change over time. The dominance of the individual topics change over time, indicating that the tweets change in terms of content from 2009 to 2020. 
 ![alt text](https://github.com/sofieditmer/cds-language/blob/main/assignments/assignment5_TopicModeling/viz/topics_over_time.jpg) <br>
 
