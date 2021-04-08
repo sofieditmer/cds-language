@@ -3,10 +3,11 @@
 Utility functions for working with LDA using gensim
 """
 # NLP
+import os 
 import re
 import nltk
-from nltk.corpus import stopwords
 nltk.download('stopwords')
+from nltk.corpus import stopwords
 stop_words = stopwords.words('english')
 #pandas
 import pandas as pd
@@ -17,15 +18,6 @@ from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 # matplotlib
 import matplotlib.pyplot as plt
-
-def sent_to_words(sentences):
-    for sent in sentences:
-        sent = re.sub(r'\S*@\S*\s?', '', sent)  # remove emails
-        sent = re.sub(r'\s+', ' ', sent)  # remove newline chars
-        sent = re.sub(r"\'", "", sent)  # remove single quotes
-        sent = gensim.utils.simple_preprocess(str(sent), deacc=True) 
-        yield(sent) 
-        
 
 def process_words(texts, nlp, bigram_mod, trigram_mod, stop_words=stop_words, allowed_postags=['NOUN', "ADJ", "VERB", "ADV"]):
     """Remove Stopwords, Form Bigrams, Trigrams and Lemmatization"""
@@ -43,14 +35,12 @@ def process_words(texts, nlp, bigram_mod, trigram_mod, stop_words=stop_words, al
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=3):
     """
     Compute c_v coherence for various number of topics
-
     Parameters:
     ----------
     dictionary : Gensim dictionary
     corpus : Gensim corpus
     texts : List of input texts
     limit : Max num of topics
-
     Returns:
     -------
     model_list : List of LDA topic models
@@ -63,18 +53,27 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=3):
         model_list.append(model)
         coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence='c_v')
         coherence_values.append(coherencemodel.get_coherence())
-        
+    
     x = range(start, limit, step)
     plt.plot(x, coherence_values)
     plt.xlabel("Num Topics")
     plt.ylabel("Coherence score")
     plt.legend(("coherence_values"), loc='best')
-    plt.show()
+    plt.savefig("../viz/n_topics_coherence.jpg")
+    
+    # define output name
+    outfile = os.path.join("..", "out", "n_topic_coherence.txt")
     
     # Print the coherence scores
     for m, cv in zip(x, coherence_values):
-        print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
+        out_string = f"Num Topics = {m} has Coherence Value of {round(cv, 4)}"
+        # Append to output file using with open()
+        with open(outfile, "a", encoding="utf-8") as results:
+            # add newling after string
+            results.write(out_string+"\n")
+    
     return model_list, coherence_values
+
 
 def format_topics_sentences(ldamodel, corpus, texts):
     # Init output
@@ -83,8 +82,10 @@ def format_topics_sentences(ldamodel, corpus, texts):
     # Get main topic in each document
     for i, row_list in enumerate(ldamodel[corpus]):
         row = row_list[0] if ldamodel.per_word_topics else row_list            
+        
         # print(row)
         row = sorted(row, key=lambda x: (x[1]), reverse=True)
+        
         # Get the Dominant topic, Perc Contribution and Keywords for each document
         for j, (topic_num, prop_topic) in enumerate(row):
             if j == 0:  # => dominant topic
@@ -98,6 +99,7 @@ def format_topics_sentences(ldamodel, corpus, texts):
     # Add original text to the end of the output
     contents = pd.Series(texts)
     sent_topics_df = pd.concat([sent_topics_df, contents], axis=1)
+    
     return(sent_topics_df)
 
 if __name__=="__main__":
